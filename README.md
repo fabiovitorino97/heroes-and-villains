@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+README.md
+markdown
 
-## Getting Started
+# Heróis e Vilões
 
-First, run the development server:
+## Sobre o Projeto
+Este é o **Trabalho 4 - Heróis e Vilões**, desenvolvido como parte de uma atividade da **FATEC** (Faculdade de Tecnologia) para a disciplina de desenvolvimento web. O objetivo do trabalho era completar um jogo em construção utilizando **React** com **Next.js**, onde um herói e um vilão se enfrentam em um sistema de turnos. O projeto foi finalizado com todas as funcionalidades solicitadas e algumas melhorias adicionais para tornar o jogo mais interessante e visualmente atrativo.
 
-```bash
+O jogo simula uma batalha entre **Batman** (herói) e **Coringa** (vilão), com ações como atacar, defender, usar cura e correr. O tema visual é inspirado em Gotham, com cores escuras e neon (verde e roxo), e o jogo inclui animações e efeitos sonoros para uma experiência mais imersiva.
+
+## Funcionalidades
+- **Ações do herói**: Batman pode atacar (causa dano aleatório entre 5 e 15), defender (reduz dano recebido), usar cura (recupera 20 de vida, com limite de 3 usos) e correr (30% de chance de sucesso).
+- **Turnos**: O herói age primeiro, e o vilão (Coringa) responde automaticamente com uma ação aleatória (atacar ou defender).
+- **Barras de vida animadas**: As barras de vida de Batman e Coringa são animadas, com transições suaves (verde para o herói, roxo para o vilão).
+- **Histórico de ações**: Todas as ações são registradas em um histórico, que rola automaticamente para a última ação e a destaca visualmente.
+- **Reiniciar jogo**: Um botão permite reiniciar o jogo, restaurando a vida, o histórico e o estado inicial.
+- **Tema visual**: Estilo Gotham com cores escuras, neon verde/roxo, e fontes góticas (Oswald).
+- **Efeitos extras**: Animações com `framer-motion` (ex.: barras de vida, tremida ao morrer) e efeitos sonoros com `use-sound` (ex.: ataque, cura, risada do Coringa).
+
+## Tecnologias Utilizadas
+- **Next.js** (versão 15.3.2): Framework principal para o projeto.
+- **React** (versão 19.0.0): Biblioteca para construção de componentes.
+- **framer-motion**: Para animações (barras de vida, tremida ao morrer).
+- **use-sound**: Para efeitos sonoros.
+- **CSS**: Estilização com tema Gotham (arquivo `globals.css`).
+
+## Como Rodar o Projeto
+Siga os passos abaixo para executar o jogo localmente:
+
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/seu-usuario/heroes-and-villains.git
+   ````
+Entre na pasta do projeto:
+bash
+
+cd heroes-and-villains
+
+Instale as dependências:
+bash
+
+npm install
+
+Rode o projeto:
+bash
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+O jogo estará disponível em http://localhost:3000. Abra o link no navegador para jogar.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Notas sobre sons:
+Os efeitos sonoros (ataque, cura, fuga, risada do Coringa) estão configurados, mas os arquivos de som (attack.mp3, heal.mp3, flee.mp3, joker_laugh.mp3) não estão incluídos no repositório. Para adicionar os sons:
+Crie a pasta public/sounds/.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Adicione os arquivos de som correspondentes.
 
-## Learn More
+Os sons podem ser encontrados em bancos de áudio livres como freesound.org.
 
-To learn more about Next.js, take a look at the following resources:
+Demonstração
+Abaixo está um GIF mostrando o funcionamento do jogo, incluindo as ações, o histórico, as barras de vida animadas e o botão de reiniciar:
+Demonstração do jogo
+Estrutura do Projeto
+app/page.js: Página principal que renderiza os componentes do jogo.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+app/components/Character.js: Componente que exibe as informações de cada personagem (herói ou vilão).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+app/components/ActionLog.js: Componente que mostra o histórico de ações.
 
-## Deploy on Vercel
+app/components/ResetButton.js: Componente do botão de reiniciar.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+app/hooks/gameManager.js: Hook que gerencia a lógica do jogo (turnos, ações, estado).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+app/globals.css: Arquivo de estilização com o tema Gotham.
+
+public/: Contém as imagens (batman.jpg, joker.jpg) e a pasta sounds/ (para os arquivos de som).
+
+Observações
+O projeto foi testado no Windows e funciona corretamente com as dependências listadas no package.json.
+
+O prazo de entrega do trabalho é 1 de junho de 2025 às 23:59. Este projeto foi finalizado em 27 de maio de 2025.
+
+Licença
+Este projeto é apenas para fins educacionais e não possui uma licença específica.
+
+---
+
+### **Instruções para atualizar no GitHub**
+Você já tem o repositório `heroes-and-villains` no GitHub e já fez o primeiro commit/push. Agora, vamos adicionar o `README.md` e atualizar o repositório.
+
+#### **Passo 1: Criar o arquivo `README.md`**
+1. Na pasta do projeto (`C:\Users\windows\Downloads\heroes-and-villains`), crie um arquivo chamado `README.md`.
+2. Copie o conteúdo acima e cole no arquivo `README.md` usando um editor de texto (ex.: Bloco de Notas, VS Code).
+3. **Substitua `seu-usuario`** no comando `git clone` pela sua conta real do GitHub (ex.: `git clone https://github.com/joao-silva/heroes-and-villains.git`).
+
+#### **Passo 2: Adicionar o `README.md` ao Git**
+No terminal, dentro da pasta do projeto:
+
+1. **Adicione o arquivo ao Git**:
+   ```bash
+   git add README.md
+
+Faça o commit:
+bash
+
+git commit -m "Adiciona README com instruções do projeto"
+
+Envie para o GitHub:
+bash
+
+git push origin main
+
+Se o branch principal for master, use:
+bash
+
+git push origin master
+
+Passo 3: Verificar no GitHub
+Acesse o repositório no GitHub (ex.: https://github.com/seu-usuario/heroes-and-villains).
+
+Confirme que o README.md está lá e que o GIF (demo.gif) é exibido corretamente na seção "Demonstração".
+
+Se o GIF não aparecer, verifique se o arquivo demo.gif foi enviado corretamente (caso não tenha sido, adicione-o com git add demo.gif, commit e push).
