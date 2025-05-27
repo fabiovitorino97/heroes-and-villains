@@ -1,6 +1,3 @@
-README.md
-markdown
-
 # Heróis e Vilões
 
 ## Sobre o Projeto
